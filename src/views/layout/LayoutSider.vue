@@ -8,6 +8,7 @@
       theme="dark"
     >
       <a-menu-item key='overview'>Overview</a-menu-item>
+      <a-menu-item key='newdevice'>New Device</a-menu-item>
       <a-menu-item key='setting'>Setting</a-menu-item>
     </a-menu>
   </div>

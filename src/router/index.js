@@ -13,6 +13,16 @@ const routes = [
     path: '/setting',
     name: 'setting',
     component: () => import('../views/setting/Setting.vue')
+  },
+  {
+    path: '/newdevice',
+    name: 'newdevice',
+    component: () => import('../views/newdevice/NewDevice.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/setting/Login.vue')
   }
 ]
 
