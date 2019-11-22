@@ -54,8 +54,13 @@ export default {
       console.log(`device name: ${this.deviceName}, device id: ${this.deviceId}`)
     },
     register() {
-      // axios
       const data = {deviceName: this.deviceName, deviceId: this.deviceId}
+      // axios
+      this.axios.get('http://localhost:8080/cam/hello')
+        .then(response => {
+          console.log(response)
+          console.log(response.data)
+        })
       console.log('register')
       console.log({...data})
     },

@@ -3,46 +3,46 @@
     <a-row :gutter='16'>
       <a-col :span='8'>
         <a-card class="box">
-          
+          {{devices[0].time}}
         </a-card>
       </a-col>
       <a-col :span='8'>
         <a-card class="box">
-          
+          2
         </a-card>
       </a-col>
       <a-col :span='8'>
         <a-card class="box">
-          
+          3
         </a-card>
       </a-col>
     </a-row>
     <a-row :gutter='16'>
       <a-col :span='12'>
         <a-card class="box">
-          
+          4
         </a-card>
       </a-col>
       <a-col :span='12'>
         <a-card class="box">
-          
+          5
         </a-card>
       </a-col>
     </a-row>
     <a-row :gutter='16'>
       <a-col :span='8'>
         <a-card class="box">
-          
+          6
         </a-card>
       </a-col>
       <a-col :span='8'>
         <a-card class="box">
-          
+          7
         </a-card>
       </a-col>
       <a-col :span='8'>
         <a-card class="box">
-          
+          8
         </a-card>
       </a-col>
     </a-row>
@@ -57,6 +57,11 @@ export default {
     ARow: Row,
     ACol: Col,
     ACard: Card
+  },
+  computed: {
+    devices: function() {
+      const devices = this.$store.state.devices
+    }
   }
 }
 </script>
