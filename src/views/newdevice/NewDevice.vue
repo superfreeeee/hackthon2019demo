@@ -3,20 +3,20 @@
     <a-card id="newdevice" title='添加设备'>
       <div class="">
         <a-input class="input-line"
-          placeholder="设备名称" 
-          size='large' 
-          v-model="deviceName"
-          @change="change"
-        >
-          <span slot="addonBefore">注册设备：</span>
-        </a-input>
-        <a-input class="input-line"
           placeholder="设备ID" 
-          size='large'
+          size='large' 
           v-model="deviceId"
           @change="change"
         >
-          <span slot="addonBefore">设备ID：</span>
+          <span slot="addonBefore">注册设备</span>
+        </a-input>
+        <a-input class="input-line"
+          placeholder="type" 
+          size='large'
+          v-model="deviceType"
+          @change="change"
+        >
+          <span slot="addonBefore">设备类型</span>
         </a-input>
         <a-button style="margin-left: 20px;" 
           type='primary'
@@ -45,13 +45,13 @@ export default {
   },
   data() {
     return {
-      deviceName: null,
-      deviceId: null
+      deviceId: null,
+      deviceType: null
     }
   },
   methods: {
     change() {
-      console.log(`device name: ${this.deviceName}, device id: ${this.deviceId}`)
+      console.log(`device id: ${this.deviceId}, device type: ${this.deviceType}`)
     },
     register() {
       // axios
@@ -73,15 +73,15 @@ export default {
     },
     reset() {
       console.log('reset')
-      this.deviceName = null
       this.deviceId = null
+      this.deviceType = null
     }
   },
   computed: {
     deviceForm() {
       return {
-        deviceName: this.deviceName,
-        deviceId: this.deviceId
+        deviceId: this.deviceId,
+        deviceType: this.deviceType
       }
     }
   }
