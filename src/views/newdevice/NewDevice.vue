@@ -56,13 +56,18 @@ export default {
     register() {
       // axios
       const ip = 'http://localhost:8080'
-      const router = ip + '/cam/register'
-      console.log(this.deviceForm)
-      this.axios.post(router, this.deviceForm)
-        .then(response => {
-          console.log(response)
-          console.log(response.data)
-        })
+      const router = ip + '/cam/push'
+      this.axios.get(router)
+        .then(() => {})
+
+      // const router = ip + '/cam/register'
+      // console.log(this.deviceForm)
+      // this.axios.post(router, this.deviceForm)
+      //   .then(response => {
+      //     console.log(response)
+      //     console.log(response.data)
+      //   })
+
       // console.log('register')
       // console.log({...data})
     },
