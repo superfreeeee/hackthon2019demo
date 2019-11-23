@@ -15,6 +15,8 @@
           size='large'
           v-model="password"
           @change="change"
+          @focus="enableEnter"
+          @blur="unableEnter"
         >
           <span slot="addonBefore">密码：</span>
         </a-input-password>
@@ -53,9 +55,35 @@ export default {
       const data = {username: this.username, password: this.password}
       console.log(data)
       // axios
-
-      this.$store.commit('updateUsername', this.username)
-      this.$router.push({name: 'overview'})
+      const ip = this.$store.state.serverIP
+      const router = ip + '/cam/login'
+      this.axios.post(router, data)
+        .then(response => {
+          const data = response.data
+          const userInfo = data.data
+          // console.log(data)
+          // console.log(userInfo)
+          this.$store.commit('updateUsername', userInfo.username)
+          this.$router.push({name: 'overview'})
+        })
+        .catch(err => {
+          err
+          // console.log(err)
+          // console.log('login fail')
+        })
+    },
+    enableEnter() {
+      window.onkeypress = e => {
+        // console.log(e)
+        if(e.keyCode === 13) {
+          this.login()
+        }
+      }
+      // console.log('enable')
+    },
+    unableEnter() {
+      window.onkeypress = null
+      // console.log('unable')
     }
   }
 }

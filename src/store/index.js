@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     username: null,
     // username: 'superfree',
-    devices: []
+    devices: [],
+    serverIP: 'http://localhost:8080'
   },
   mutations: {
     updateUsername(state, username) {

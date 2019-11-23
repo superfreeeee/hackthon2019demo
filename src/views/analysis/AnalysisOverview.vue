@@ -3,7 +3,8 @@
     <a-row :gutter='16'>
       <a-col :span='8'>
         <a-card class="box">
-          {{devices[0].time}}
+          {{devices}}
+          <!-- {{devices[0].time}} -->
         </a-card>
       </a-col>
       <a-col :span='8'>
@@ -61,6 +62,7 @@ export default {
   computed: {
     devices: function() {
       const devices = this.$store.state.devices
+      return devices
     }
   }
 }

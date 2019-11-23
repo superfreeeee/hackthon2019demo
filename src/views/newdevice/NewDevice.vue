@@ -54,20 +54,30 @@ export default {
       console.log(`device name: ${this.deviceName}, device id: ${this.deviceId}`)
     },
     register() {
-      const data = {deviceName: this.deviceName, deviceId: this.deviceId}
       // axios
-      this.axios.get('http://localhost:8080/cam/hello')
+      const ip = 'http://localhost:8080'
+      const router = ip + '/cam/register'
+      console.log(this.deviceForm)
+      this.axios.post(router, this.deviceForm)
         .then(response => {
           console.log(response)
           console.log(response.data)
         })
-      console.log('register')
-      console.log({...data})
+      // console.log('register')
+      // console.log({...data})
     },
     reset() {
       console.log('reset')
       this.deviceName = null
       this.deviceId = null
+    }
+  },
+  computed: {
+    deviceForm() {
+      return {
+        deviceName: this.deviceName,
+        deviceId: this.deviceId
+      }
     }
   }
 }
