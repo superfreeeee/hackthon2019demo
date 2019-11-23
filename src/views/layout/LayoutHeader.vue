@@ -1,15 +1,17 @@
 <template>
   <div id="layout-header">
     <span class="title">家居监控系统</span>
-    <div 
-      class="profile"
-    >
+    <div class="profile">
       <a-icon type="user" />
-      <span style="margin-left: 20px;" @click="setting">{{username}}</span>
-      <span style="margin-left: 10px; font-size: 20px;" 
+      <span style="margin-left: 20px; cursor: pointer;" 
+        @click="setting"
+      >{{username}}
+      </span>
+      <span style="margin-left: 10px; font-size: 20px; cursor: pointer;" 
         :v-if="logined"
         @click="logout"
-      >| 登出</span>
+      >| 登出
+      </span>
     </div>
   </div>
 </template>
@@ -64,6 +66,5 @@ export default {
 #layout-header .profile {
   margin-right: 40px;
   font-size: 25px;
-  cursor: pointer;
 }
 </style>
